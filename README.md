@@ -1,4 +1,4 @@
-ReactiveMongo-Criteria
+ReactiveMongo-Criteria [ ![Download](https://api.bintray.com/packages/danslapman/maven/reactivemongo-criteria/images/download.svg) ](https://bintray.com/danslapman/maven/reactivemongo-criteria/_latestVersion)
 ======================
 
 *Note: this fork created mainly for publishing some artifacts while the original [repo](https://github.com/osxhacker/ReactiveMongo-Criteria) is stale.*
