@@ -2,17 +2,20 @@ import BuildSettings._
 import Resolvers._
 import Dependencies._
 
-lazy val dsl = Project(
+lazy val `criteria-dsl` = Project(
   "ReactiveMongo-Criteria-DSL",
   file("."),
-  settings = buildSettings ++ osgiSettings ++ Seq(
+  settings = buildSettings ++ Seq(
     resolvers := resolversList,
-    OsgiKeys.exportPackage := Seq(
-      "reactivemongo.extensions.dsl.criteria"
-    ),
     libraryDependencies ++= Seq(
       scalaTest, bson, bsonmacros,
       "org.scala-lang" % "scala-reflect" % scalaVersion.value
     )
   )
 ).enablePlugins(SbtOsgi)
+
+licenses += ("Apache v2", url("http://www.apache.org/licenses/LICENSE-2.0"))
+
+bintrayOrganization := Some("danslapman")
+
+bintrayReleaseOnPublish in ThisBuild := false

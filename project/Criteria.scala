@@ -1,5 +1,5 @@
-import sbt.Keys._
 import sbt._
+import sbt.Keys._
 
 object BuildSettings {
   val buildVersion = Dependencies.reactiveMongoVersion
@@ -12,7 +12,8 @@ object BuildSettings {
   }
 
   val buildSettings = Seq(
-    organization := "org.reactivemongo",
+    name := "reactivemongo-criteria",
+    organization := "danslapman",
     version := buildVersion,
     scalaVersion := "2.11.12",
     crossScalaVersions := Seq("2.11.12", "2.12.4"),

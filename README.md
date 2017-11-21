@@ -1,6 +1,15 @@
 ReactiveMongo-Criteria
 ======================
 
+*Note: this fork created mainly for publishing some artifacts while the original [repo](https://github.com/osxhacker/ReactiveMongo-Criteria) is stale.*
+
+```
+resolvers += Resolver.bintrayRepo("danslapman", "maven")
+
+libraryDependencies += "danslapman" %% "reactivemongo-criteria" % "0.12.7"
+```
+
+
 Adds a Criteria DSL for creating [ReactiveMongo](https://github.com/ReactiveMongo/ReactiveMongo) queries.
 
 ## Brief Review of Where Criteria Officially Lives
@@ -29,30 +38,30 @@ This is, of course, still supported as the DSL does not preclude this usage.
 What the DSL *does* provide is the ablity to formulate queries thusly:
 
 ```scala
-  // Using an Untyped.criteria
-  {
+// Using an Untyped.criteria
+{
   import reactivemongo.extensions.dsl.criteria._
   import Untyped._
-
+  
   // The MongoDB properties referenced are not enforced by the compiler
   // to belong to any particular type.  This is what is meant by "Untyped".
   val adhoc = criteria.firstName === "Jack" && criteria.age >= 18;
-  val cursor = collection.find(adhoc).cursor[BSONDocument];
-  }
+  val cursor =   collection.find(adhoc).cursor[BSONDocument];
+}
 ```
 
 Another form which achieves the same result is to use one of the `where` methods available:
 
 ```scala
-  // Using one of the Untyped.where overloads
-  {
+// Using one of the Untyped.where overloads
+{
   import reactivemongo.extensions.dsl.criteria._
   import Untyped._
-
+  
   val cursor = collection.find(
     where (_.firstName === "Jack" && _.age >= 18)
-	).cursor[BSONDocument];
-  }
+    ).cursor[BSONDocument];
+}
 ```
 
 There are overloads for between 1 and 22 place holders using the `where` method.  Should more than 22 be needed, then the 1 argument version should be used with a named parameter.  This allows an infinite number of property constraints to be specified.

@@ -8,3 +8,4 @@ addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.0.1")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-osgi" % "0.9.1")
 
+addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.1")
