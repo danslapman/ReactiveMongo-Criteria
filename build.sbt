@@ -14,7 +14,7 @@ lazy val `criteria-dsl` = Project(
   )
 ).enablePlugins(SbtOsgi)
 
-licenses += ("Apache v2", url("http://www.apache.org/licenses/LICENSE-2.0"))
+licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
 bintrayOrganization := Some("danslapman")
 
