@@ -40,7 +40,7 @@ What the DSL *does* provide is the ablity to formulate queries thusly:
 ```scala
 // Using an Untyped.criteria
 {
-  import reactivemongo.extensions.dsl.criteria._
+  import reactivemongodsl.criteria._
   import Untyped._
   
   // The MongoDB properties referenced are not enforced by the compiler
@@ -55,7 +55,7 @@ Another form which achieves the same result is to use one of the `where` methods
 ```scala
 // Using one of the Untyped.where overloads
 {
-  import reactivemongo.extensions.dsl.criteria._
+  import reactivemongodsl.criteria._
   import Untyped._
   
   val cursor = collection.find(
@@ -75,7 +75,7 @@ For situations where the MongoDB document structure is well known and a develope
   // Using a Typed criteria which restricts properties to those
   // within a given type and/or those directly accessible
   // through property selectors.
-  import reactivemongo.extensions.dsl.criteria._
+  import reactivemongodsl.criteria._
   import Typed._
 
   case class Nested (rating : Double)
@@ -118,7 +118,7 @@ When using the Criteria DSL, the fact that the operators adhere to the expectati
 For the purposes of the operator API reference, assume the following code is in scope:
 
 ```scala
-import reactivemongo.extensions.dsl.criteria.Untyped._
+import reactivemongodsl.criteria.Untyped._
 ```
 
 ### Comparison Operators
